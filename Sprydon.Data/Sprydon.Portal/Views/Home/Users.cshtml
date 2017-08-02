@@ -1,0 +1,33 @@
+﻿
+<header class="jumbotron">
+    <h1>User List</h1>
+</header>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input id="surname" type="text" class="form-control" placeholder="Search for users by surname...">
+            <span class="input-group-btn">
+                <button id="searchButton" class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+
+   
+</div>
+@section scripts {
+<script>
+    $('#searchButton').on('click', function () {
+        var $btn = $(this).button('loading')
+        var surname = $('#surname').val();
+        $("#resultscontainer").load("/fetchusers?surname="+ surname)    
+    
+        $btn.button('reset')
+  })
+</script>
+
+    }
+
+<div id="resultscontainer"></div>
+
+
+

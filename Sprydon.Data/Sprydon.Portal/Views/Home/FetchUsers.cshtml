@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Sprydon.Portal.models.User>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <!-- Table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Surname</td>
+                        <td>Firstname</td>
+                    </tr>
+                </thead>
+
+                @foreach (var user in Model)
+                {
+                <tr>
+                    <td>@user.Forename</td>
+                    <td>@user.Surname</td>
+                </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
